@@ -1,6 +1,51 @@
 {% extends 'base_layout.html' %}
+{% load static %}
 
 {% block content %}
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'css/Article-Clean.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-User-List.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Responsive-footer-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Responsive-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <div class="register-photo" style="background-color:white;">
+        <div class="form-container">
+            <div class="image-holder" style="background-image:url('{% static 'img/fire-307384_1280.png' %}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+            <form method="post">
+            	{% csrf_token %}
+                <h2 class="text-center">Login to your account.</h2>
+                <div class="form-group">{{ form.username }} 
+                {% if form.username.errors|length > 0 %}
+                	<h3> Username doesn't comply with guidelines. </h3>
+                {% endif %}
+            	</div>
+                <div class="form-group">{{ form.password }}                 
+                {% if form.password.errors|length > 0 %}
+                	<h3> Password doesn't comply with guidelines. </h3>
+                {% endif %}
+            	</div>
+        		{% if form.non_field_errors|length > 0 %}
+        		  <div class="form-group"><button class="btn btn-primary btn-block wobble animated" type="submit" style="background-image: linear-gradient(-90deg, red, yellow);">Login</button></div>
+        		{% else %}
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(-90deg, red, yellow);">Login</button></div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+    <!--
 	<h1> Login </h1>
 	<form class="site-form" action="{% url 'accounts:login' %}" method="post"> 
 	{% csrf_token %}
@@ -10,5 +55,6 @@
 	{% endif %}
 	<input type="submit" value="Login">
 
-	</form>
+	</form> !-->
 {% endblock %}
+
