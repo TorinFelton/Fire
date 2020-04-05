@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+		{% for flame in flames %}
+	    <article style="margin-top:40px;margin-right:134px;margin-bottom:40px;margin-left:115px;">
+		    <div class="card">
+		        <div class="card-body" data-aos="fade" data-aos-once="true" data-aos-duration="800">
+		            <h4 class="card-title">{{ flame.title }}</h4>
+		            <h6 class="text-muted card-subtitle mb-2">{{ flame.date }}</h6>
+		            <p class="card-text">{{ flame.snippet }}</p><a class="card-link" href="{% url 'firehome:detail' post=flame.slug %}">View more...</a>
+		       	</div>
+		    </div>
+		</article>
+		{% endfor %}
+
+{% endblock %}

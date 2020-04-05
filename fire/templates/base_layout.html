@@ -1,0 +1,77 @@
+{% load static %}
+<html>
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="{% static 'css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-User-List.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Responsive-footer-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Responsive-footer.css' %}">
+
+	<head>
+		<title>Fire Home</title>
+
+	</head>
+
+	<header>
+		<script>
+			function submitForm()
+			{
+				document.getElementById("logoutForm").submit();
+				console.log("Submitted")
+			}
+		</script>
+	    <div>
+	        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="/*background-image:url(&quot;linear-gradient(-90deg, red, yellow)&quot;);*/color:rgb(255,255,255);">
+	            <div class="container"><a class="navbar-brand" href="#" style="color:rgb(255,0,0);font-family:'Aguafina Script', cursive;font-size:49px;margin:0px 20px 10px;height:48px;">Fire</a><button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="color:rgb(255,255,255);"></span></button>
+	                <div
+	                    class="collapse navbar-collapse" id="navcol-1">
+	                    <ul class="nav navbar-nav ml-auto">
+		                    <form id="logoutForm" action="{% url 'accounts:logout' %}" method="post">{% csrf_token %}</form>
+	                        <li class="nav-item" role="presentation"><a class="nav-link" onclick="submitForm()" href="#" style="color:rgb(255,255,255);">Logout</a></li>
+	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);">Dropdown </a>
+	                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+	                        </li>
+	                        </li>
+	                    </ul>
+	            </div>
+	    </div>
+	</header>
+
+	<body>
+		<div class="wrapper">
+			{% block content %}
+			
+			{% endblock %}
+		</div>
+	</body>
+
+	<footer style="margin-top:40px;">
+	    <div style="background-color:rgba(58,47,47,0);background-size:cover;background-repeat:no-repeat;height:366px;">
+	        <div class="container" style="color:rgb(255,0,0);">
+	            <h1 class="text-center" style="font-family:'Aguafina Script', cursive;font-size:46px;color:rgb(255,0,0);">Fire</h1>
+	            <hr>
+	            <ul class="list-inline" id="text_decoration" style="margin-top:30px;font-family:ABeeZee, sans-serif;">
+	                <li class="list-inline-item" style="color:rgb(255,0,0);"><a href="#" class="decoration" style="color:rgb(255,0,0);font-size:20px;margin-right:10px;">Home</a></li>
+	                <li class="list-inline-item"><a href="#" style="font-size:20px;color:rgb(255,0,0);margin-right:10px;">Services</a></li>
+	                <li class="list-inline-item"><a href="#" style="font-size:20px;color:rgb(255,0,0);margin-right:10px;">About</a></li>
+	                <li class="list-inline-item"><a href="#" style="color:rgb(255,0,0);font-size:20px;margin-right:10px;">Terms</a></li>
+	                <li class="list-inline-item"><a href="#" style="color:rgb(255,0,0);font-size:20px;">Privacy Policy</a></li>
+	            </ul>
+	            <p class="text-center" style="margin-top:30px;margin-bottom:15px;"></p>
+	            <p class="text-center" style="color:rgb(193,184,184);font-family:ABeeZee, sans-serif;margin-bottom:23px;">Fire @ 2020</p>
+	        </div>
+	    </div>
+	</footer>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bs-animation.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+
+</html>

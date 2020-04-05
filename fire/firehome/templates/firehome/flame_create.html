@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+	<div>
+		<h2> Create flame </h2>
+		<form action="{% url 'firehome:create' %}" method="post">
+			{% csrf_token %}
+			{{ form }}
+			<input type="submit" value="Create">
+		</form>
+	</div>
+
+{% endblock %}
