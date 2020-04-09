@@ -17,7 +17,9 @@
 		<title>Fire Home</title>
 
 	</head>
-
+	{% if user.is_authenticated %}
+		<form id="logoutForm" action="{% url 'accounts:logout' %}" method="post">{% csrf_token %}</form>
+	{% endif %}
 	<header>
 		<script>
 			function submitForm()
@@ -32,12 +34,19 @@
 	                <div
 	                    class="collapse navbar-collapse" id="navcol-1">
 	                    <ul class="nav navbar-nav ml-auto">
-		                    <form id="logoutForm" action="{% url 'accounts:logout' %}" method="post">{% csrf_token %}</form>
-	                        <li class="nav-item" role="presentation"><a class="nav-link" onclick="submitForm()" href="#" style="color:rgb(255,255,255);">Logout</a></li>
-	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);">Dropdown </a>
-	                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+	                    	{% if user.is_authenticated %}
+	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"> <i class="fas fa-users"></i> Account  </a>
+	                            <div class="dropdown-menu" role="menu">
+	                            	<a class="dropdown-item" role="presentation" href="#">Profile</a>
+	                            	<a class="dropdown-item" role="presentation" href="#">Settings</a>
+	                            	<a class="dropdown-item" role="presentation" onclick="submitForm()">Logout</a></div>
 	                        </li>
 	                        </li>
+	                        {% else %}
+	                        	<li class="nav-item" role="presentation"><a class="nav-link" href="/accounts/signup/" style="color:rgb(255,255,255);">Sign Up</a></li>
+	                        	<li class="nav-item" role="presentation"><a class="nav-link" href="/accounts/login/" style="color:rgb(255,255,255);">Login</a></li>
+
+	                        {% endif %}
 	                    </ul>
 	            </div>
 	    </div>
