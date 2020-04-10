@@ -1,6 +1,11 @@
 # Fire - WIP
 Django Framework (python) based social network site.
 
+Versions used:
+
+- Bootstrap 4.1
+- Django 3.0.2
+
 # Screenshots
 
 ## Homepage - Displays all flames (posts). WIP
