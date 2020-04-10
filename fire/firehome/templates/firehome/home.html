@@ -10,7 +10,11 @@
 		            <h4 class="card-title">{{ flame.title }}</h4>
 		            <h5 class="text-muted card-subtitle mb-2" ><i style="font-family:'Lora'">By: </i><a href="/users/{{ flame.author }}">{{ flame.author }}</a></h5>
 		            <h6 class="text-muted card-subtitle mb-2">{{ flame.date }}</h6>
-		            <p class="card-text">{{ flame.snippet }}</p><a class="card-link" href="{% url 'firehome:detail' post=flame.slug %}">View more...</a>
+		            <p class="card-text">{{ flame.snippet }}
+		            {% if flame.isLong %}
+		            <font size="4"><b>...</b></font>
+		        	{% endif %}
+		        </p><a class="card-link" href="{% url 'firehome:detail' post=flame.slug %}">View more...</a>
 		       	</div>
 		    </div>
 		</article>

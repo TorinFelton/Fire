@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
 
 	<head>
-		<title>Fire Home</title>
+		<title>Fire | Home</title>
 
 	</head>
 	{% if user.is_authenticated %}
@@ -31,7 +31,7 @@
 		</script>
 	    <div>
 	        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="/*background-image:url(&quot;linear-gradient(-90deg, red, yellow)&quot;);*/color:rgb(255,255,255);">
-	            <div class="container"><a class="navbar-brand" href="#" style="color:rgb(255,0,0);font-family:'Aguafina Script', cursive;font-size:49px;margin:0px 20px 10px;height:48px;">Fire</a><button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="color:rgb(255,255,255);"></span></button>
+	            <div class="container"><a class="navbar-brand" href="{% url 'home' %}" style="color:rgb(255,0,0);font-family:'Aguafina Script', cursive;font-size:49px;margin:0px 20px 10px;height:48px;">Fire</a><button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="color:rgb(255,255,255);"></span></button>
 	                <div
 	                    class="collapse navbar-collapse" id="navcol-1">
 	                    <ul class="nav navbar-nav ml-auto">

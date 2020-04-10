@@ -14,4 +14,10 @@ class Flame(models.Model):
 		return self.title
 
 	def snippet(self):
-		return self.body[:100]
+		if len(self.body) > 100:
+			toReturn = self.body[:100]
+		else:
+			toReturn = self.body
+		return toReturn
+	def isLong(self):
+		return len(self.body) > 100
