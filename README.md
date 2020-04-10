@@ -3,4 +3,4 @@ Django Framework (python) based social network site.
 
 # Screenshots
 
-![Homepage (posts list)](https://imgur.com/c7HoByu)
+![Homepage (posts list)](https://i.imgur.com/c7HoByu.png)
