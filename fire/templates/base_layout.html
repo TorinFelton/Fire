@@ -35,6 +35,9 @@
 	                <div
 	                    class="collapse navbar-collapse" id="navcol-1">
 	                    <ul class="nav navbar-nav ml-auto">
+	                    	{% if user.is_staff %}
+	                        	<li class="nav-item" role="presentation"><a class="nav-link" href="/admin/" style="color:rgb(255,255,255);"> <i class="fa fa-cog" style="padding-right: 5px"></i> Admin</a></li>
+	                        {% endif %}
 	                    	{% if user.is_authenticated %}
 	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"> <i class="fa fa-user-o" style="padding-right: 5px"></i> My Account  </a>
 	                            <div class="dropdown-menu" role="menu">
@@ -52,6 +55,8 @@
 	                        	</li>
 
 	                        {% endif %}
+
+
 	                    </ul>
 	            </div>
 	    </div>
