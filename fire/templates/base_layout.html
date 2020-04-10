@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/Responsive-footer-1.css' %}">
     <link rel="stylesheet" href="{% static 'css/Responsive-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
 
 	<head>
 		<title>Fire Home</title>
@@ -35,16 +36,20 @@
 	                    class="collapse navbar-collapse" id="navcol-1">
 	                    <ul class="nav navbar-nav ml-auto">
 	                    	{% if user.is_authenticated %}
-	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"> Account  </a>
+	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"> <i class="fa fa-user-o" style="padding-right: 5px"></i> My Account  </a>
 	                            <div class="dropdown-menu" role="menu">
 	                            	<a class="dropdown-item" role="presentation" href="#">Profile</a>
 	                            	<a class="dropdown-item" role="presentation" href="#">Settings</a>
-	                            	<a class="dropdown-item" role="presentation" onclick="submitForm()">Logout</a></div>
-	                        </li>
+	                            	<a class="dropdown-item" role="presentation" onclick="submitForm()">Logout</a>
+	                            </div>
 	                        </li>
 	                        {% else %}
-	                        	<li class="nav-item" role="presentation"><a class="nav-link" href="/accounts/signup/" style="color:rgb(255,255,255);">Sign Up</a></li>
-	                        	<li class="nav-item" role="presentation"><a class="nav-link" href="/accounts/login/" style="color:rgb(255,255,255);">Login</a></li>
+	                        	<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"> <i class="fa fa-fire" style="padding-right: 5px"></i> Fire Accounts  </a>
+		                            <div class="dropdown-menu" role="menu">
+		                            	<a class="dropdown-item" role="presentation" href="/accounts/signup/">Sign Up</a>
+		                            	<a class="dropdown-item" role="presentation" href="/accounts/login/">Login</a>
+		                            </div>
+	                        	</li>
 
 	                        {% endif %}
 	                    </ul>
