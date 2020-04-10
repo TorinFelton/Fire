@@ -4,6 +4,11 @@ Django Framework (python) based social network site.
 ### WIP
  - I intend to iterate over page designs to improve as I develop the back-end
  - I am developing the back-end alongside of the front-end in order to keep the design relevant to the purpose of the page
+ 
+## Page Design Style
+ - I've chosen to revolve around flames/fire as the style of the design
+  - This means that most colours used will be white, red, orange
+  - The current liking system is not working, though I am likely going to implement a 'fuel' or 'water' system (fuel the fire or put it     out)
 
 Versions used:
 
