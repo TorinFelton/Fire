@@ -9,6 +9,7 @@ Versions used:
 # Screenshots
 
 ## Homepage - Displays all flames (posts). WIP
+<img src="https://i.imgur.com/c7HoByu.png" width="400" height="400/>
 ![Posts List](https://i.imgur.com/c7HoByu.png =400x400)
 
 ## Sign up & Login. WIP
