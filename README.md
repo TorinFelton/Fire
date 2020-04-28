@@ -7,8 +7,8 @@ Django Framework (python) based social network site.
  
 ## Page Design Style
  - I've chosen to revolve around flames/fire as the style of the design
-  - This means that most colours used will be white, red, orange
-  - The current liking system is not working, though I am likely going to implement a 'fuel' or 'water' system (fuel the fire or put it     out)
+ - The current liking system is not working, though I am likely going to implement a 'fuel' or 'water' system
+ 
 ## Database
  - Site does include fully working login/signup system w/ user database & posts database linked
  - Currently using an SQLite db which is not for production due to limitations, will likely switch to something else in the future
