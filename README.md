@@ -1,4 +1,9 @@
-# Fire
+# Fire - EPQ
+This project is part of my EPQ for 6th Form:
+"Can I build a social network?" 
+
+# Information about the programming side
+
 Django Framework (python) based social network site.
 
 ### WIP
