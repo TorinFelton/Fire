@@ -1,4 +1,4 @@
-# Fire - EPQ
+# Fire
 This is a personal project I'm using to learn how to use the Django framework.
 
 # Information about the programming side
