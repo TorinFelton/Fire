@@ -1,20 +1,20 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-		{% for flame in flames %}
+		{% for posts in posts %}
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
 
 	    <article style="margin-top:40px;margin-right:134px;margin-bottom:40px;margin-left:115px;">
 		    <div class="card">
 		        <div class="card-body" data-aos="fade" data-aos-once="true" data-aos-duration="800">
-		            <h4 class="card-title">{{ flame.title }}</h4>
-		            <h5 class="text-muted card-subtitle mb-2" ><i style="font-family:'Lora'">By: </i><a href="/users/{{ flame.author }}">{{ flame.author }}</a></h5>
-		            <h6 class="text-muted card-subtitle mb-2">{{ flame.date }}</h6>
-		            <p class="card-text">{{ flame.snippet }}
-		            {% if flame.isLong %}
+		            <h4 class="card-title">{{ posts.title }}</h4>
+		            <h5 class="text-muted card-subtitle mb-2" ><i style="font-family:'Lora'">By: </i><a href="/users/{{ posts.author }}">{{ posts.author }}</a></h5>
+		            <h6 class="text-muted card-subtitle mb-2">{{ posts.date }}</h6>
+		            <p class="card-text">{{ posts.snippet }}
+		            {% if posts.isLong %}
 		            <font size="4"><b>...</b></font>
 		        	{% endif %}
-		        </p><a class="card-link" href="{% url 'firehome:detail' post=flame.slug %}">View more...</a>
+		        </p><a class="card-link" href="{% url 'firehome:detail' post=posts.slug %}">View more...</a>
 		       	</div>
 		    </div>
 		</article>

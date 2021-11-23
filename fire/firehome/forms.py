@@ -3,5 +3,5 @@ from . import models
 
 class CreateFlame(forms.ModelForm):
 	class Meta:
-		model = models.Flame
+		model = models.Post
 		fields = ['title', 'body', 'slug']

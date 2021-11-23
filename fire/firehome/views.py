@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Flame
+from .models import Post
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
@@ -7,13 +7,13 @@ from . import forms
 # Create your views here.
 
 def home(request):
-	flames = Flame.objects.all().order_by('date')
+	posts = Post.objects.all().order_by('date')
 
-	return render(request, 'firehome/home.html', {'flames': flames})
+	return render(request, 'firehome/home.html', {'posts': posts})
 
 def flame_detail(request, post):
 	# return HttpResponse(post)
-	flame = Flame.objects.get(slug=post)
+	flame = Post.objects.get(slug=post)
 	return render(request, 'firehome/fire_post.html', {'post': flame})
 
 @login_required(login_url="/accounts/login")

@@ -26,7 +26,6 @@
 			function submitForm()
 			{
 				document.getElementById("logoutForm").submit();
-				console.log("Submitted")
 			}
 		</script>
 	    <div>
@@ -35,11 +34,12 @@
 	                <div
 	                    class="collapse navbar-collapse" id="navcol-1">
 	                    <ul class="nav navbar-nav ml-auto">
+	                    	<li class="nav-item" role="presentation"><a class="nav-link" href="/firehome/create" style="color:rgb(255,255,255);"><i class="fa fa-plus" style="padding-right: 5px"></i> Create Post</a></li>
 	                    	{% if user.is_staff %}
 	                        	<li class="nav-item" role="presentation"><a class="nav-link" href="/admin/" style="color:rgb(255,255,255);"> <i class="fa fa-cog" style="padding-right: 5px"></i> Admin</a></li>
 	                        {% endif %}
 	                    	{% if user.is_authenticated %}
-	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"> <i class="fa fa-user-o" style="padding-right: 5px"></i> My Account  </a>
+	                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:rgb(255,255,255);"> <i class="fa fa-user-o" style="padding-right: 5px"></i> My Account ({{ user.username }}) </a>
 	                            <div class="dropdown-menu" role="menu">
 	                            	<a class="dropdown-item" role="presentation" href="#">Profile</a>
 	                            	<a class="dropdown-item" role="presentation" href="#">Settings</a>

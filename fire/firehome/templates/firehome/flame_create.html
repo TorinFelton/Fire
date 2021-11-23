@@ -1,14 +1,41 @@
 {% extends 'base_layout.html' %}
+{% load static %}
 
 {% block content %}
 
-	<div>
-		<h2> Create flame </h2>
-		<form action="{% url 'firehome:create' %}" method="post">
-			{% csrf_token %}
-			{{ form }}
-			<input type="submit" value="Create">
-		</form>
-	</div>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'css/Article-Clean.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-User-List.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Responsive-footer-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Responsive-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <div class="register-photo" style="background-color:white;">
+        <div class="form-container">
+            <div class="image-holder" style="background-image:url('{% static 'img/fire-307384_1280.png' %}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+            <form method="post">
+            	{% csrf_token %}
+                <h2 class="text-center">Create Post</h2>
+                <h3>Title</h3>
+                <div class="form-group">{{ form.title }}</div>
+                <h3>Body</h3>
+                <div class="form-group">{{ form.body }}</div>
+                <h3>URL Path</h3>
+        		<div class="form-group">{{ form.slug }}</div>
+        		<div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(-90deg, red, yellow);">Create</button></div>
+            </form>
+        </div>
+    </div>
 
 {% endblock %}

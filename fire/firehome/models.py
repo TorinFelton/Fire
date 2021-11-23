@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Flame(models.Model):
+class Post(models.Model):
 	title = models.CharField(max_length=100)
 	body = models.TextField()
 	slug = models.SlugField(default='firepost')
